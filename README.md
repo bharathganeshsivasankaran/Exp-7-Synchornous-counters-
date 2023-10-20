@@ -72,23 +72,39 @@ A=1^A;
 end 
 endmodule
 ```
+### DOWN COUNTER
+```
+module downcounter(clk,a);
+input clk;
+output reg[3:0]a;
+always@(posedge clk)
+begin
+a[3]=(~a[2] & ~a[1] & ~a[0])^ a[3];
+a[2]=(~a[1] & ~a[0]) ^ a[2];
+a[1]=(~a[0] ^ a[1]);
+a[0]=1 ^ a[0];
+end
+endmodule
+```
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 ### RTL LOGIC UP COUNTER
 ![Screenshot 2023-10-20 091232](https://github.com/bharathganeshsivasankaran/Exp-7-Synchornous-counters-/assets/119478098/76046079-4629-4ac3-b23f-9b4b04d0b865)
 ### RTL LOGIC DOWN COUNTER  
+![WhatsApp Image 2023-10-20 at 09 47 51_613a1cfd](https://github.com/bharathganeshsivasankaran/Exp-7-Synchornous-counters-/assets/119478098/96bba110-e178-4f33-a5c4-0f0152b046d5)
+
 
 ### TIMING DIGRAMS FOR COUNTER  
 ### UP COUNTER
 ![Screenshot 2023-10-20 091200](https://github.com/bharathganeshsivasankaran/Exp-7-Synchornous-counters-/assets/119478098/d7771fc3-be6b-4694-8675-f5b16fad862c)
 ### DOWN COUNTER
+![WhatsApp Image 2023-10-20 at 09 48 16_09bbda59](https://github.com/bharathganeshsivasankaran/Exp-7-Synchornous-counters-/assets/119478098/e4f63b93-5573-4624-883a-ad1c02828d59)
 
 ### TRUTH TABLE 
-
-
-
-
-
+### UP COUNTER
+![WhatsApp Image 2023-10-20 at 09 48 43_5c9eae5d](https://github.com/bharathganeshsivasankaran/Exp-7-Synchornous-counters-/assets/119478098/7829c9b7-7e66-4fbc-b7d8-8fd40ae56478)
+### DOWN COUNTER
+![WhatsApp Image 2023-10-20 at 09 48 25_ca1bd06d](https://github.com/bharathganeshsivasankaran/Exp-7-Synchornous-counters-/assets/119478098/b105a7a9-239c-449e-8763-6fde3a1b6102)
 
 ### RESULTS 
 Thus,the implementation of 4 bit up and down counters and validate  functionality has been successfully executed.
